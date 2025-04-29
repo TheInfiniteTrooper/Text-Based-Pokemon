@@ -1,6 +1,15 @@
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello");
+        System.out.println("Battle Start!");
+        GameController gameController = new GameController();
+        while(true) {
+            boolean playAgain = gameController.battle();
+            if (!playAgain) {
+                break;
+            }
+        }
+        System.out.println("Goodbye!");
     }
 
     /*
