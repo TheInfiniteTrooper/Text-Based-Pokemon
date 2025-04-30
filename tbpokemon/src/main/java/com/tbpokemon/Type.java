@@ -1,3 +1,4 @@
+package com.tbpokemon;
 public enum Type {
     NORMAL,
     FIGHTING,

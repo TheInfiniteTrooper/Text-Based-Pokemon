@@ -1,3 +1,5 @@
+package com.tbpokemon;
+
 import java.util.Scanner;
 
 public class GameController {
