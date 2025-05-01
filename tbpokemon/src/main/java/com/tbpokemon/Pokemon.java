@@ -8,11 +8,13 @@ public class Pokemon {
     Type type;
     int level;
     Map<String, Integer> stats;
+    Map<String, Move> moves;
 
     public Pokemon() {
         this.name = "Squirtle";
         this.type = Type.WATER;
         this.level = 10;
+        this.moves = new HashMap<>();
         this.stats = new HashMap<>();
         this.stats.put("HP", 44);
         this.stats.put("ATK", 48);
@@ -68,11 +70,18 @@ public class Pokemon {
         System.out.printf("SPATK: %d\n", getSpAtk());
         System.out.printf("SPDEF: %d\n", getSpDef());
         System.out.printf("SPD: %d\n", getSpeed());
+        for(Map.Entry<String, Move> entry : moves.entrySet()) {
+            entry.getValue().printInfo();
+        }
     }
 
     public void printInfo() {
         System.out.println("\n" + name);
         System.out.printf("LVL: %d\n", level);
         System.out.printf("HP: %d / %d\n", getHP(), getHP());
+    }
+
+    public Move getMove(String move) {
+        return moves.get(move);
     }
 }

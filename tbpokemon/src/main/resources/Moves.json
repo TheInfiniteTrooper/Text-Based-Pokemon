@@ -15,6 +15,86 @@
             "power": 35,
             "accuracy": 95,
             "PP": 35
+        },
+        "razorleaf" : {
+            "name": "Razor Leaf",
+            "type": "GRASS",
+            "category": "PHYSICAL",
+            "power": 55,
+            "accuracy": 95,
+            "PP": 25
+        },
+        "energyball" : {
+            "name": "Energy Ball",
+            "type": "GRASS",
+            "category": "SPECIAL",
+            "power": 80,
+            "accuracy": 100,
+            "PP": 10
+        },
+        "bubble" : {
+            "name": "Bubble",
+            "type": "WATER",
+            "category": "SPECIAL",
+            "power": 20,
+            "accuracy": 100,
+            "PP": 30
+        },
+        "watergun" : {
+            "name": "Water Gun",
+            "type": "WATER",
+            "category": "SPECIAL",
+            "power": 40,
+            "accuracy": 100,
+            "PP": 25
+        },
+        "bite" : {
+            "name": "Bite",
+            "type": "DARK",
+            "category": "PHYSICAL",
+            "power": 60,
+            "accuracy": 100,
+            "PP": 25
+        },
+        "aquatail" : {
+            "name": "Aqua Tail",
+            "type": "WATER",
+            "category": "PHYSICAL",
+            "power": 90,
+            "accuracy": 90,
+            "PP": 10
+        },
+        "scratch" : {
+            "name": "Scratch",
+            "type": "NORMAL",
+            "category": "PHYSICAL",
+            "power": 40,
+            "accuracy": 100,
+            "PP": 35
+        },
+        "ember" : {
+            "name": "Ember",
+            "type": "FIRE",
+            "category": "SPECIAL",
+            "power": 40,
+            "accuracy": 100,
+            "PP": 25
+        },
+        "firefang" : {
+            "name": "Fire Fang",
+            "type": "FIRE",
+            "category": "PHYSICAL",
+            "power": 65,
+            "accuracy": 95,
+            "PP": 15
+        },
+        "flamethrower" : {
+            "name": "Flamethrower",
+            "type": "FIRE",
+            "category": "SPECIAL",
+            "power": 95,
+            "accuracy": 100,
+            "PP": 15
         }
     }
 }
