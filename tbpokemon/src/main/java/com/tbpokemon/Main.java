@@ -2,8 +2,10 @@ package com.tbpokemon;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Battle Start!");
-        GameController gameController = new GameController();
+        String filename = "tbpokemon\\src\\main\\resources\\Pokemon.json";
+
+        System.out.println("\nBattle Start!");
+        GameController gameController = new GameController(filename);
         while(true) {
             boolean playAgain = gameController.battle();
             if (!playAgain) {

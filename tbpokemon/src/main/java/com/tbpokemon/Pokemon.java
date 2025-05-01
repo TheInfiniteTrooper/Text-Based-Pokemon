@@ -58,7 +58,7 @@ public class Pokemon {
         return stats.get("SPD").intValue();
     }
 
-    public void printInfo() {
+    public void printAllInfo() {
         System.out.println("\n" + name);
         System.out.printf("LVL: %d\n", level);
         System.out.printf("HP: %d / %d\n", getHP(), getHP());
@@ -68,5 +68,11 @@ public class Pokemon {
         System.out.printf("SPATK: %d\n", getSpAtk());
         System.out.printf("SPDEF: %d\n", getSpDef());
         System.out.printf("SPD: %d\n", getSpeed());
+    }
+
+    public void printInfo() {
+        System.out.println("\n" + name);
+        System.out.printf("LVL: %d\n", level);
+        System.out.printf("HP: %d / %d\n", getHP(), getHP());
     }
 }
