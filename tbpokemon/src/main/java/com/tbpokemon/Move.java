@@ -40,4 +40,13 @@ public class Move {
     public int getPP() {
         return this.PP;
     }
+
+    public void printInfo() {
+        System.out.printf("\nMove: %s\n", name);
+        System.out.printf("Type: %s\n", type.name());
+        System.out.printf("Category: %s\n", category.name());
+        System.out.printf("Power: %d\n", power);
+        System.out.printf("Accuracy: %d\n", accuracy);
+        System.out.printf("PP %d / %d\n", PP, PP);
+    }
 }
