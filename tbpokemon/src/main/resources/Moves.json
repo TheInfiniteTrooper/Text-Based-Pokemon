@@ -1,0 +1,20 @@
+{
+    "moveList" : {
+        "vinewhip": {
+            "name": "Vine Whip",
+            "type": "GRASS",
+            "category": "PHYSICAL",
+            "power": 35,
+            "accuracy": 100,
+            "PP": 15
+        },
+        "tackle" : {
+            "name": "Tackle",
+            "type": "NORMAL",
+            "category": "PHYSICAL",
+            "power": 35,
+            "accuracy": 95,
+            "PP": 35
+        }
+    }
+}

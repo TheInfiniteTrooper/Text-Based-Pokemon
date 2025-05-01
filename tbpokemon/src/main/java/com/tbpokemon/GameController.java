@@ -1,16 +1,33 @@
 package com.tbpokemon;
 
+import java.io.FileReader;
 import java.util.Scanner;
+
+import com.google.gson.Gson;
+import com.google.gson.stream.JsonReader;
 
 public class GameController {
 
     Scanner scanner;
+    Pokedex pokedex;
+    MoveList moveList;
     Pokemon enemyPokemon;
     Pokemon playerPokemon;
     boolean reset;
 
-    public GameController() {
+    public GameController(String pokedexPath, String moveListPath) {
         this.scanner = new Scanner(System.in);
+        try {
+            JsonReader reader = new JsonReader(new FileReader(pokedexPath));
+            Gson gson = new Gson();
+            this.pokedex = gson.fromJson(reader, Pokedex.class);
+            reader.close();
+            reader = new JsonReader(new FileReader(moveListPath));
+            this.moveList = gson.fromJson(reader, MoveList.class);
+            reader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void setEnemyPokemon(Pokemon pokemon) {
@@ -23,7 +40,9 @@ public class GameController {
 
     public boolean battle() {
         choosePokemon();
+        playerPokemon.printInfo();
         spawnWildPokemon();
+        enemyPokemon.printInfo();
 
         System.out.printf("The wild %s has fainted!\n", this.enemyPokemon.getName());
 
@@ -66,7 +85,7 @@ public class GameController {
     private void choosePokemon() {
         Integer opt;
         while (true) {
-            System.out.println("Choose your Pokemon:\n1) 2) 3)");
+            System.out.println("Choose your Pokemon:\n1) Squirtle 2) Bulbasaur 3) Charmander");
             try {
                 opt = getOption();
                 this.playerPokemon = pokemonSelector(opt);
@@ -84,11 +103,11 @@ public class GameController {
         }
         switch (opt) {
             case 1:
-                return new Pokemon();
+                return pokedex.getPokemon("squirtle");
             case 2:
-                return new Pokemon();
+                return pokedex.getPokemon("bulbasaur");
             case 3:
-                return new Pokemon();
+                return pokedex.getPokemon("charmander");
             default:
                 throw new IllegalArgumentException("Option should be 1, 2, or 3!");
         }
