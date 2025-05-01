@@ -23,38 +23,50 @@ public class Pokemon {
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public Type getType() {
-        return this.type;
+        return type;
     }
 
     public int getLevel() {
-        return this.level;
+        return level;
     }
 
     public int getHP() {
-        return this.stats.get("HP").intValue();
+        return stats.get("HP").intValue();
     }
 
     public int getAtk() {
-        return this.stats.get("ATK").intValue();
+        return stats.get("ATK").intValue();
     }
 
     public int getDef() {
-        return this.stats.get("DEF").intValue();
+        return stats.get("DEF").intValue();
     }
 
     public int getSpAtk() {
-        return this.stats.get("SPATK").intValue();
+        return stats.get("SPATK").intValue();
     }
 
     public int getSpDef() {
-        return this.stats.get("SPDEF").intValue();
+        return stats.get("SPDEF").intValue();
     }
 
     public int getSpeed() {
-        return this.stats.get("SPD").intValue();
+        return stats.get("SPD").intValue();
+    }
+
+    public void printInfo() {
+        System.out.println("\n" + name);
+        System.out.printf("LVL: %d\n", level);
+        System.out.printf("HP: %d / %d\n", getHP(), getHP());
+        System.out.printf("Type: %s\n", getType().name());
+        System.out.printf("ATK: %d\n", getAtk());
+        System.out.printf("DEF: %d\n", getDef());
+        System.out.printf("SPATK: %d\n", getSpAtk());
+        System.out.printf("SPDEF: %d\n", getSpDef());
+        System.out.printf("SPD: %d\n", getSpeed());
     }
 }

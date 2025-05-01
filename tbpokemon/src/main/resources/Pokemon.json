@@ -1,0 +1,43 @@
+{
+    "pokedex" : {
+        "squirtle": {
+            "name": "Squirtle",
+            "type": "WATER",
+            "level": 10,
+            "stats": {
+                "HP": 44,
+                "ATK": 48,
+                "DEF": 65,
+                "SPATK": 50,
+                "SPDEF": 64,
+                "SPD": 43
+            }
+        }, 
+        "bulbasaur": {
+            "name": "Bulbasaur",
+            "type": "GRASS",
+            "level": 10,
+            "stats": {
+                "HP": 45,
+                "ATK": 49,
+                "DEF": 49,
+                "SPATK": 65,
+                "SPDEF": 65,
+                "SPD": 45
+            }
+        },
+        "charmander": {
+            "name": "Charmander",
+            "type": "FIRE",
+            "level": 10,
+            "stats": {
+                "HP": 39,
+                "ATK": 52,
+                "DEF": 43,
+                "SPATK": 60,
+                "SPDEF": 50,
+                "SPD": 65
+            }
+        }
+    }
+}
