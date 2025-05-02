@@ -84,4 +84,10 @@ public class Pokemon {
     public Move getMove(String move) {
         return moves.get(move);
     }
+
+    public int useMove(Move move, Pokemon target) {
+        // x = (((2*lvl*crit)/5) + 2) * power * (getAtk()/target.getDef()) / 50
+        // (x + 2) * STAB * target.Type1 * target.Type2 * random
+        return 0;
+    }
 }
