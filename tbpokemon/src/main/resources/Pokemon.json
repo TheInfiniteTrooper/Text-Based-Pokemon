@@ -4,14 +4,14 @@
             "name": "Squirtle",
             "type": "WATER",
             "subtype": "NONE",
-            "level": 10,
+            "level": 20,
             "stats": {
-                "HP": 44,
-                "ATK": 48,
-                "DEF": 65,
-                "SPATK": 50,
-                "SPDEF": 64,
-                "SPD": 43
+                "HP": 66,
+                "ATK": 30,
+                "DEF": 33,
+                "SPATK": 47,
+                "SPDEF": 36,
+                "SPD": 28
             },
             "moves": {
                 "bubble" : {
@@ -52,14 +52,14 @@
             "name": "Bulbasaur",
             "type": "GRASS",
             "subtype": "POISON",
-            "level": 10,
+            "level": 20,
             "stats": {
-                "HP": 45,
-                "ATK": 49,
-                "DEF": 49,
-                "SPATK": 65,
-                "SPDEF": 65,
-                "SPD": 45
+                "HP": 66,
+                "ATK": 47,
+                "DEF": 30,
+                "SPATK": 37,
+                "SPDEF": 33,
+                "SPD": 29
             },
             "moves": {
                 "vinewhip": {
@@ -100,14 +100,14 @@
             "name": "Charmander",
             "type": "FIRE",
             "subtype": "NONE",
-            "level": 10,
+            "level": 20,
             "stats": {
-                "HP": 39,
-                "ATK": 52,
-                "DEF": 43,
-                "SPATK": 60,
-                "SPDEF": 50,
-                "SPD": 65
+                "HP": 64,
+                "ATK": 32,
+                "DEF": 25,
+                "SPATK": 51,
+                "SPDEF": 31,
+                "SPD": 37
             },
             "moves": {
                 "scratch" : {

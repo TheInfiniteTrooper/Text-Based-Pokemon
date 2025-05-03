@@ -58,8 +58,7 @@ public class MoveEffectiveness {
         for(Effective effect : Arrays.asList(typeEffect, subtypeEffect)) {
             switch (effect) {
                 case NO_EFFECT:
-                    damageMulti *= 0f;
-                    break;
+                    return 0f;
                 case NOT_EFFECTIVE:
                     damageMulti *= 0.5f;
                     break;

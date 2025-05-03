@@ -9,12 +9,12 @@ public class Move {
     int PP;
 
     public Move() {
-        this.name = "Vine Whip";
-        this.type = Type.GRASS;
+        this.name = "Tackle";
+        this.type = Type.NORMAL;
         this.category = Category.PHYSICAL;
         this.power = 35;
-        this.accuracy = 100;
-        this.PP = 15;
+        this.accuracy = 95;
+        this.PP = 35;
     }
 
     public String getName() {

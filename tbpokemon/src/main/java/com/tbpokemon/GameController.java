@@ -43,6 +43,7 @@ public class GameController {
         enemyPokemon.printInfo();
 
         System.out.printf("The wild %s has fainted!\n", this.enemyPokemon.getName());
+        System.out.printf("Used %s it did %d damage!\n", new Move().getName(), playerPokemon.useMove(new Move(), enemyPokemon));
 
         playAgain();
         if (this.reset) {

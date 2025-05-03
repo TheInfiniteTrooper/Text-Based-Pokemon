@@ -92,8 +92,42 @@ public class Pokemon {
     }
 
     public int useMove(Move move, Pokemon target) {
-        // x = (((2*lvl*crit)/5) + 2) * power * (getAtk()/target.getDef()) / 50
-        // (x + 2) * STAB * target.Type1 * target.Type2 * random
-        return 0;
+        float damage = ((2 * level * getCrit())/5f) + 2;
+        damage *= move.getPower();
+        if (move.getCategory() == Category.PHYSICAL) {
+            damage *= ((float)getAtk() / (float)target.getDef());
+        } else {
+            damage *= ((float)getSpAtk() / (float)target.getSpDef());
+        }
+        damage = (damage / 50f) + 2;
+        damage *= getSameTypeBonus(move);
+        damage *= MoveEffectiveness.getInstance().checkEffective(move, target);
+        if (damage == 0f) {
+            return 0;
+        }
+        damage = damage * getRandomness();
+        return Math.max(1, (int)damage);
+    }
+
+    private float getSameTypeBonus(Move move) {
+        if (move.getType() == type || move.getType() == subtype) {
+            return 1.5f;
+        }
+        return 1f;
+    }
+
+    // 1/16 chance
+    private float getCrit() {
+        int num = (int)(Math.random() * 16) + 1;
+        if (num == 1) {
+            System.out.println("CRIT!!!");
+            return 2f;
+        }
+        return 1f;
+    }
+
+    private float getRandomness() {
+        float num = (float)(217 + (int)(Math.random() * ((255 - 217) + 1))) / 255;
+        return num;
     }
 }
