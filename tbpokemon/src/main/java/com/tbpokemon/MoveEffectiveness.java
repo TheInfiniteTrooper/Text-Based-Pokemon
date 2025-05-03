@@ -1,5 +1,6 @@
 package com.tbpokemon;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,19 +19,34 @@ public class MoveEffectiveness {
     }
 
     public float checkEffective(Move attack, Pokemon target) {
-        Effective effectiveness = chart.get(attack.getType()).get(target.getType());
-        switch (effectiveness) {
-            case NO_EFFECT:
-                return 0f;
-            case NOT_EFFECTIVE:
-                return 0.5f;
-            case EFFECTIVE:
-                return 1f;
-            case SUPER_EFFECTIVE:
-                return 2f;
-            default:
-                return 1f;
+        float damageMulti = 1f;
+        Effective typeEffect = chart.get(attack.getType()).get(target.getType());
+        Effective subtypeEffect = Effective.EFFECTIVE;
+        if (target.getSubtype() != Type.NONE) {
+            subtypeEffect = chart.get(attack.getType()).get(target.getSubtype());
         }
+
+        for(Effective effect : Arrays.asList(typeEffect, subtypeEffect)) {
+            switch (effect) {
+                case NO_EFFECT:
+                    damageMulti *= 0f;
+                    break;
+                case NOT_EFFECTIVE:
+                    damageMulti *= 0.5f;
+                    break;
+                case EFFECTIVE:
+                    damageMulti *= 1f;
+                    break;
+                case SUPER_EFFECTIVE:
+                    damageMulti *= 2f;
+                    break;
+                default:
+                    damageMulti *= 1f;
+                    break;
+            }
+        }
+        
+        return damageMulti;
     }
 
     public void printChart() {

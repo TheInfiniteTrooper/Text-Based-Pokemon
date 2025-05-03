@@ -6,6 +6,7 @@ public class Pokemon {
 
     String name;
     Type type;
+    Type subtype;
     int level;
     Map<String, Integer> stats;
     Map<String, Move> moves;
@@ -13,6 +14,7 @@ public class Pokemon {
     public Pokemon() {
         this.name = "Squirtle";
         this.type = Type.WATER;
+        this.subtype = Type.NONE;
         this.level = 10;
         this.moves = new HashMap<>();
         this.stats = new HashMap<>();
@@ -30,6 +32,10 @@ public class Pokemon {
 
     public Type getType() {
         return type;
+    }
+
+    public Type getSubtype() {
+        return subtype;
     }
 
     public int getLevel() {

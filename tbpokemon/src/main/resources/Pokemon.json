@@ -3,6 +3,7 @@
         "squirtle": {
             "name": "Squirtle",
             "type": "WATER",
+            "subtype": "NONE",
             "level": 10,
             "stats": {
                 "HP": 44,
@@ -50,6 +51,7 @@
         "bulbasaur": {
             "name": "Bulbasaur",
             "type": "GRASS",
+            "subtype": "POISON",
             "level": 10,
             "stats": {
                 "HP": 45,
@@ -97,6 +99,7 @@
         "charmander": {
             "name": "Charmander",
             "type": "FIRE",
+            "subtype": "NONE",
             "level": 10,
             "stats": {
                 "HP": 39,
