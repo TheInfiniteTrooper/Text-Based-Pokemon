@@ -1,22 +1,19 @@
 package com.tbpokemon;
 
 import java.io.FileReader;
-import java.util.Scanner;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
 public class GameController {
-
-    Scanner scanner;
     Pokedex pokedex;
+    MoveEffectiveness effectivenessChart;
     MoveList moveList;
     Pokemon enemyPokemon;
     Pokemon playerPokemon;
     boolean reset;
 
     public GameController(String pokedexPath, String moveListPath) {
-        this.scanner = new Scanner(System.in);
         try {
             JsonReader reader = new JsonReader(new FileReader(pokedexPath));
             Gson gson = new Gson();
@@ -28,6 +25,7 @@ public class GameController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        effectivenessChart = MoveEffectiveness.getInstance();
     }
 
     public void setEnemyPokemon(Pokemon pokemon) {
@@ -45,12 +43,12 @@ public class GameController {
         enemyPokemon.printInfo();
 
         System.out.printf("The wild %s has fainted!\n", this.enemyPokemon.getName());
+        System.out.printf("Used %s it did %d damage!\n", new Move().getName(), playerPokemon.useMove(new Move(), enemyPokemon));
 
         playAgain();
         if (this.reset) {
             return this.reset;
         }
-        this.scanner.close();
         return this.reset;
     }
 
@@ -122,7 +120,7 @@ public class GameController {
 
     private Integer getOption() {
         try {
-            return Integer.parseInt(this.scanner.nextLine());
+            return Integer.parseInt(Main.scanner.nextLine());
         } catch (Exception e) {
             System.err.printf("ERROR: %s Please select a valid option!\n", e.getMessage());
             return null;

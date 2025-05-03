@@ -1,5 +1,6 @@
 package com.tbpokemon;
 public enum Type {
+    NONE,
     NORMAL,
     FIGHTING,
     FLYING,

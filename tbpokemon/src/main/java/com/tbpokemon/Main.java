@@ -1,6 +1,11 @@
 package com.tbpokemon;
 
+import java.util.Scanner;
+
 public class Main {
+
+    static final Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         String pokedexPath = "tbpokemon\\src\\main\\resources\\Pokemon.json";
         String moveListPath = "tbpokemon\\src\\main\\resources\\Moves.json";
@@ -13,6 +18,7 @@ public class Main {
                 break;
             }
         }
+        scanner.close();
         System.out.println("Goodbye!");        
     }
 
