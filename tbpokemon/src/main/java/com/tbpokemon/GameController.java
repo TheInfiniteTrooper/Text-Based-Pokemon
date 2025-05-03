@@ -10,12 +10,13 @@ public class GameController {
 
     Scanner scanner;
     Pokedex pokedex;
+    MoveEffectiveness effectivenessChart;
     MoveList moveList;
     Pokemon enemyPokemon;
     Pokemon playerPokemon;
     boolean reset;
 
-    public GameController(String pokedexPath, String moveListPath) {
+    public GameController(String pokedexPath, String moveListPath, String effectPath) {
         this.scanner = new Scanner(System.in);
         try {
             JsonReader reader = new JsonReader(new FileReader(pokedexPath));
@@ -24,6 +25,9 @@ public class GameController {
             reader.close();
             reader = new JsonReader(new FileReader(moveListPath));
             this.moveList = gson.fromJson(reader, MoveList.class);
+            reader.close();
+            reader = new JsonReader(new FileReader(effectPath));
+            this.effectivenessChart = gson.fromJson(reader, MoveEffectiveness.class);
             reader.close();
         } catch (Exception e) {
             e.printStackTrace();

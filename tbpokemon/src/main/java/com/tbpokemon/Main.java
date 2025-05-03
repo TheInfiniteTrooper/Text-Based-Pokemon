@@ -4,9 +4,10 @@ public class Main {
     public static void main(String[] args) {
         String pokedexPath = "tbpokemon\\src\\main\\resources\\Pokemon.json";
         String moveListPath = "tbpokemon\\src\\main\\resources\\Moves.json";
+        String effectPath = "tbpokemon\\src\\main\\resources\\TypeEffectiveness.json";
 
         System.out.println("\nBattle Start!");
-        GameController gameController = new GameController(pokedexPath, moveListPath);
+        GameController gameController = new GameController(pokedexPath, moveListPath, effectPath);
         while(true) {
             boolean playAgain = gameController.battle();
             if (!playAgain) {
