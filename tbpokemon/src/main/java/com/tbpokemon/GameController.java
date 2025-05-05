@@ -42,13 +42,21 @@ public class GameController {
         spawnWildPokemon();
         enemyPokemon.printInfo(true);
         System.out.printf("Go %s!\n\n", playerPokemon.getName());
-        moveSelect();
-        enemyPokemon.printInfo(true);
-        enemyAttack();
-        playerPokemon.printInfo(false);
-
-        System.out.printf("The wild %s has fainted!\n", this.enemyPokemon.getName());
-
+        while (true) {
+            moveSelect();
+            enemyPokemon.printInfo(true);
+            if (enemyPokemon.hasFainted()) {
+                System.out.printf("The wild %s has fainted!\n", this.enemyPokemon.getName());
+                break;
+            }
+            enemyAttack();
+            playerPokemon.printInfo(false);
+            if (playerPokemon.hasFainted()) {
+                System.out.printf("%s has fainted!\n", this.playerPokemon.getName());
+                break;
+            }
+        }
+        
         playAgain();
         if (this.reset) {
             return this.reset;
@@ -147,11 +155,11 @@ public class GameController {
         }
         switch (opt) {
             case 1:
-                return pokedex.getPokemon("squirtle");
+                return pokedex.getPokemon("squirtle").clone();
             case 2:
-                return pokedex.getPokemon("bulbasaur");
+                return pokedex.getPokemon("bulbasaur").clone();
             case 3:
-                return pokedex.getPokemon("charmander");
+                return pokedex.getPokemon("charmander").clone();
             default:
                 throw new IllegalArgumentException("Option should be 1, 2, or 3!");
         }
