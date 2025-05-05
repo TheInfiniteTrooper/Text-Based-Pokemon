@@ -19,7 +19,7 @@ public class Main {
             }
         }
         scanner.close();
-        System.out.println("Goodbye!");        
+        System.out.println("Goodbye!");
     }
 
     /*

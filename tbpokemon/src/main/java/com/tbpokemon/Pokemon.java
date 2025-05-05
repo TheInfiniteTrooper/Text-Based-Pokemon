@@ -81,10 +81,14 @@ public class Pokemon {
         }
     }
 
-    public void printInfo() {
-        System.out.println("\n" + name);
+    public void printInfo(boolean isEnemy) {
+        if (isEnemy) {
+            System.out.println("\nWild " + name);
+        } else {
+            System.out.println("\n" + name);
+        }
         System.out.printf("LVL: %d\n", level);
-        System.out.printf("HP: %d / %d\n", getHP(), getHP());
+        System.out.printf("HP: %d / %d\n\n", getHP(), getHP());
     }
 
     public Move getMove(Integer index) {

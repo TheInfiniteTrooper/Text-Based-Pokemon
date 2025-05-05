@@ -38,10 +38,11 @@ public class GameController {
 
     public boolean battle() {
         choosePokemon();
-        playerPokemon.printInfo();
+        playerPokemon.printInfo(false);
         spawnWildPokemon();
-        enemyPokemon.printInfo();
+        enemyPokemon.printInfo(true);
         moveSelect();
+        enemyAttack();
 
         System.out.printf("The wild %s has fainted!\n", this.enemyPokemon.getName());
 
@@ -89,26 +90,33 @@ public class GameController {
                 playerPokemon.getMove(2).getName(), playerPokemon.getMove(3).getName(), playerPokemon.getMove(4).getName());
             try {
                 opt = getOption();
-                move = moveSelector(opt);
+                move = moveSelector(playerPokemon, opt);
                 break;
             } catch (IllegalArgumentException e) {
                 System.err.printf("ERROR: %s\n", e.getMessage());
             }
         }
-        System.out.printf("You chose %s.\n", move.getName());
-        System.out.printf("%s used %s it did %d damage!\n", playerPokemon.getName(), move.getName(), playerPokemon.useMove(move, enemyPokemon));
+        System.out.printf("%s used %s it did %d damage!\n\n", playerPokemon.getName(), move.getName(), playerPokemon.useMove(move, enemyPokemon));
     }
 
-    private Move moveSelector(Integer opt) {
+    private Move moveSelector(Pokemon pokemon, Integer opt) {
         if (opt == null) {
             throw new IllegalArgumentException("Option should be 1, 2, 3, or 4!");
         }
         switch (opt) {
             case 1, 2, 3, 4:
-                return playerPokemon.getMove(opt);
+                return pokemon.getMove(opt);
             default:
                 throw new IllegalArgumentException("Option should be 1, 2, 3, or 4!");
         }
+    }
+
+
+
+    private void enemyAttack() {
+        int num = (int)(Math.random() * 4) + 1;
+        Move move = moveSelector(enemyPokemon, num);
+        System.out.printf("The wild %s uses %s\nIt did %d damage!\n\n", enemyPokemon.getName(), move.getName(), enemyPokemon.useMove(move, playerPokemon));
     }
 
     private void choosePokemon() {
