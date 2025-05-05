@@ -41,8 +41,11 @@ public class GameController {
         playerPokemon.printInfo(false);
         spawnWildPokemon();
         enemyPokemon.printInfo(true);
+        System.out.printf("Go %s!\n\n", playerPokemon.getName());
         moveSelect();
+        enemyPokemon.printInfo(true);
         enemyAttack();
+        playerPokemon.printInfo(false);
 
         System.out.printf("The wild %s has fainted!\n", this.enemyPokemon.getName());
 
@@ -96,7 +99,9 @@ public class GameController {
                 System.err.printf("ERROR: %s\n", e.getMessage());
             }
         }
-        System.out.printf("%s used %s it did %d damage!\n\n", playerPokemon.getName(), move.getName(), playerPokemon.useMove(move, enemyPokemon));
+        int dmg = playerPokemon.useMove(move, enemyPokemon);
+        System.out.printf("It did %d damage!\n", dmg);
+        enemyPokemon.takeDamage(dmg);
     }
 
     private Move moveSelector(Pokemon pokemon, Integer opt) {
@@ -111,12 +116,13 @@ public class GameController {
         }
     }
 
-
-
     private void enemyAttack() {
         int num = (int)(Math.random() * 4) + 1;
         Move move = moveSelector(enemyPokemon, num);
-        System.out.printf("The wild %s uses %s\nIt did %d damage!\n\n", enemyPokemon.getName(), move.getName(), enemyPokemon.useMove(move, playerPokemon));
+        System.out.print("The wild ");
+        int dmg = enemyPokemon.useMove(move, playerPokemon);
+        System.out.printf("It did %d damage!\n", dmg);
+        playerPokemon.takeDamage(dmg);
     }
 
     private void choosePokemon() {
@@ -126,6 +132,7 @@ public class GameController {
             try {
                 opt = getOption();
                 this.playerPokemon = pokemonSelector(opt);
+                this.playerPokemon.resetHP();
                 break;
             } catch (IllegalArgumentException e) {
                 System.err.printf("ERROR: %s\n", e.getMessage());
@@ -153,6 +160,7 @@ public class GameController {
     private void spawnWildPokemon() {
         int num = (int)(Math.random() * 3) + 1;
         this.enemyPokemon = pokemonSelector(num);
+        this.enemyPokemon.resetHP();
         System.out.println("You venture into the tall grass.");
         System.out.printf("A wild %s has appeared!\n", this.enemyPokemon.getName());
     }

@@ -5,6 +5,7 @@
             "type": "WATER",
             "subtype": "NONE",
             "level": 20,
+            "curHealth": 66,
             "stats": {
                 "HP": 66,
                 "ATK": 30,
@@ -53,6 +54,7 @@
             "type": "GRASS",
             "subtype": "POISON",
             "level": 20,
+            "curHealth": 66,
             "stats": {
                 "HP": 66,
                 "ATK": 47,
@@ -101,6 +103,7 @@
             "type": "FIRE",
             "subtype": "NONE",
             "level": 20,
+            "curHealth": 64,
             "stats": {
                 "HP": 64,
                 "ATK": 32,
