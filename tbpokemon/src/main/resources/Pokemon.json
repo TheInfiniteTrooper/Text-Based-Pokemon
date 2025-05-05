@@ -14,7 +14,7 @@
                 "SPD": 28
             },
             "moves": {
-                "bubble" : {
+                "1" : {
                     "name": "Bubble",
                     "type": "WATER",
                     "category": "SPECIAL",
@@ -22,7 +22,7 @@
                     "accuracy": 100,
                     "PP": 30
                 },
-                "watergun" : {
+                "2" : {
                     "name": "Water Gun",
                     "type": "WATER",
                     "category": "SPECIAL",
@@ -30,7 +30,7 @@
                     "accuracy": 100,
                     "PP": 25
                 },
-                "bite" : {
+                "3" : {
                     "name": "Bite",
                     "type": "DARK",
                     "category": "PHYSICAL",
@@ -38,7 +38,7 @@
                     "accuracy": 100,
                     "PP": 25
                 },
-                "aquatail" : {
+                "4" : {
                     "name": "Aqua Tail",
                     "type": "WATER",
                     "category": "PHYSICAL",
@@ -62,7 +62,7 @@
                 "SPD": 29
             },
             "moves": {
-                "vinewhip": {
+                "1": {
                     "name": "Vine Whip",
                     "type": "GRASS",
                     "category": "PHYSICAL",
@@ -70,7 +70,7 @@
                     "accuracy": 100,
                     "PP": 15
                 },
-                "tackle" : {
+                "2" : {
                     "name": "Tackle",
                     "type": "NORMAL",
                     "category": "PHYSICAL",
@@ -78,7 +78,7 @@
                     "accuracy": 95,
                     "PP": 35
                 },
-                "razorleaf" : {
+                "3" : {
                     "name": "Razor Leaf",
                     "type": "GRASS",
                     "category": "PHYSICAL",
@@ -86,7 +86,7 @@
                     "accuracy": 95,
                     "PP": 25
                 },
-                "energyball" : {
+                "4" : {
                     "name": "Energy Ball",
                     "type": "GRASS",
                     "category": "SPECIAL",
@@ -110,7 +110,7 @@
                 "SPD": 37
             },
             "moves": {
-                "scratch" : {
+                "1" : {
                     "name": "Scratch",
                     "type": "NORMAL",
                     "category": "PHYSICAL",
@@ -118,7 +118,7 @@
                     "accuracy": 100,
                     "PP": 35
                 },
-                "ember" : {
+                "2" : {
                     "name": "Ember",
                     "type": "FIRE",
                     "category": "SPECIAL",
@@ -126,7 +126,7 @@
                     "accuracy": 100,
                     "PP": 25
                 },
-                "firefang" : {
+                "3" : {
                     "name": "Fire Fang",
                     "type": "FIRE",
                     "category": "PHYSICAL",
@@ -134,7 +134,7 @@
                     "accuracy": 95,
                     "PP": 15
                 },
-                "flamethrower" : {
+                "4" : {
                     "name": "Flamethrower",
                     "type": "FIRE",
                     "category": "SPECIAL",

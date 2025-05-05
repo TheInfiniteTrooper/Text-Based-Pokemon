@@ -9,7 +9,7 @@ public class Pokemon {
     Type subtype;
     int level;
     Map<String, Integer> stats;
-    Map<String, Move> moves;
+    Map<Integer, Move> moves;
 
     public Pokemon() {
         this.name = "Squirtle";
@@ -76,7 +76,7 @@ public class Pokemon {
         System.out.printf("SPATK: %d\n", getSpAtk());
         System.out.printf("SPDEF: %d\n", getSpDef());
         System.out.printf("SPD: %d\n", getSpeed());
-        for(Map.Entry<String, Move> entry : moves.entrySet()) {
+        for(Map.Entry<Integer, Move> entry : moves.entrySet()) {
             entry.getValue().printInfo();
         }
     }
@@ -87,8 +87,8 @@ public class Pokemon {
         System.out.printf("HP: %d / %d\n", getHP(), getHP());
     }
 
-    public Move getMove(String move) {
-        return moves.get(move);
+    public Move getMove(Integer index) {
+        return moves.get(index);
     }
 
     public int useMove(Move move, Pokemon target) {
