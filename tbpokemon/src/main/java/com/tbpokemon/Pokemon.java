@@ -1,6 +1,7 @@
 package com.tbpokemon;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Pokemon {
 
@@ -26,6 +27,19 @@ public class Pokemon {
         this.stats.put("SPATK", 50);
         this.stats.put("SPDEF", 64);
         this.stats.put("SPD", 43);
+    }
+
+    @Override
+    public Pokemon clone() {
+        Pokemon pokeClone = new Pokemon();
+        pokeClone.name = this.name;
+        pokeClone.type = this.type;
+        pokeClone.subtype = this.subtype;
+        pokeClone.level = this.level;
+        pokeClone.moves = this.moves.entrySet().stream().collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue()));
+        pokeClone.stats = this.stats.entrySet().stream().collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue()));
+        pokeClone.resetHP();
+        return pokeClone;
     }
 
     public String getName() {
@@ -144,6 +158,10 @@ public class Pokemon {
 
     public void takeDamage(int dmg) {
         curHealth = Math.max(0, curHealth - dmg);
+    }
+
+    public boolean hasFainted() {
+        return curHealth == 0;
     }
 
     public void resetHP() {
