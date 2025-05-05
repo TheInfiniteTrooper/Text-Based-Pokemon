@@ -8,8 +8,9 @@ public class Pokemon {
     Type type;
     Type subtype;
     int level;
+    int curHealth;
     Map<String, Integer> stats;
-    Map<String, Move> moves;
+    Map<Integer, Move> moves;
 
     public Pokemon() {
         this.name = "Squirtle";
@@ -18,6 +19,7 @@ public class Pokemon {
         this.level = 10;
         this.moves = new HashMap<>();
         this.stats = new HashMap<>();
+        this.curHealth = 44;
         this.stats.put("HP", 44);
         this.stats.put("ATK", 48);
         this.stats.put("DEF", 65);
@@ -44,6 +46,10 @@ public class Pokemon {
 
     public int getHP() {
         return stats.get("HP").intValue();
+    }
+
+    public int getCurHP() {
+        return curHealth;
     }
 
     public int getAtk() {
@@ -76,22 +82,27 @@ public class Pokemon {
         System.out.printf("SPATK: %d\n", getSpAtk());
         System.out.printf("SPDEF: %d\n", getSpDef());
         System.out.printf("SPD: %d\n", getSpeed());
-        for(Map.Entry<String, Move> entry : moves.entrySet()) {
+        for(Map.Entry<Integer, Move> entry : moves.entrySet()) {
             entry.getValue().printInfo();
         }
     }
 
-    public void printInfo() {
-        System.out.println("\n" + name);
+    public void printInfo(boolean isEnemy) {
+        if (isEnemy) {
+            System.out.println("\nWild " + name);
+        } else {
+            System.out.println("\n" + name);
+        }
         System.out.printf("LVL: %d\n", level);
-        System.out.printf("HP: %d / %d\n", getHP(), getHP());
+        System.out.printf("HP: %d / %d\n\n", getCurHP(), getHP());
     }
 
-    public Move getMove(String move) {
-        return moves.get(move);
+    public Move getMove(Integer index) {
+        return moves.get(index);
     }
 
     public int useMove(Move move, Pokemon target) {
+        System.out.printf("%s used %s\n", name, move.getName());
         float damage = ((2 * level * getCrit())/5f) + 2;
         damage *= move.getPower();
         if (move.getCategory() == Category.PHYSICAL) {
@@ -129,5 +140,13 @@ public class Pokemon {
     private float getRandomness() {
         float num = (float)(217 + (int)(Math.random() * ((255 - 217) + 1))) / 255;
         return num;
+    }
+
+    public void takeDamage(int dmg) {
+        curHealth = Math.max(0, curHealth - dmg);
+    }
+
+    public void resetHP() {
+        curHealth = this.getHP();
     }
 }

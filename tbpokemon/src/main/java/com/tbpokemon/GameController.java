@@ -38,12 +38,16 @@ public class GameController {
 
     public boolean battle() {
         choosePokemon();
-        playerPokemon.printInfo();
+        playerPokemon.printInfo(false);
         spawnWildPokemon();
-        enemyPokemon.printInfo();
+        enemyPokemon.printInfo(true);
+        System.out.printf("Go %s!\n\n", playerPokemon.getName());
+        moveSelect();
+        enemyPokemon.printInfo(true);
+        enemyAttack();
+        playerPokemon.printInfo(false);
 
         System.out.printf("The wild %s has fainted!\n", this.enemyPokemon.getName());
-        System.out.printf("Used %s it did %d damage!\n", new Move().getName(), playerPokemon.useMove(new Move(), enemyPokemon));
 
         playAgain();
         if (this.reset) {
@@ -78,7 +82,48 @@ public class GameController {
             default:
                 throw new IllegalArgumentException("Option should be 1 or 2!");
         }
-    } 
+    }
+    
+    private void moveSelect() {
+        Integer opt;
+        Move move;
+        while (true) {
+            System.out.printf("What will %s do?\n", playerPokemon.getName());
+            System.out.printf("1) %s 2) %s 3) %s 4) %s\n", playerPokemon.getMove(1).getName(), 
+                playerPokemon.getMove(2).getName(), playerPokemon.getMove(3).getName(), playerPokemon.getMove(4).getName());
+            try {
+                opt = getOption();
+                move = moveSelector(playerPokemon, opt);
+                break;
+            } catch (IllegalArgumentException e) {
+                System.err.printf("ERROR: %s\n", e.getMessage());
+            }
+        }
+        int dmg = playerPokemon.useMove(move, enemyPokemon);
+        System.out.printf("It did %d damage!\n", dmg);
+        enemyPokemon.takeDamage(dmg);
+    }
+
+    private Move moveSelector(Pokemon pokemon, Integer opt) {
+        if (opt == null) {
+            throw new IllegalArgumentException("Option should be 1, 2, 3, or 4!");
+        }
+        switch (opt) {
+            case 1, 2, 3, 4:
+                return pokemon.getMove(opt);
+            default:
+                throw new IllegalArgumentException("Option should be 1, 2, 3, or 4!");
+        }
+    }
+
+    private void enemyAttack() {
+        int num = (int)(Math.random() * 4) + 1;
+        Move move = moveSelector(enemyPokemon, num);
+        System.out.print("The wild ");
+        int dmg = enemyPokemon.useMove(move, playerPokemon);
+        System.out.printf("It did %d damage!\n", dmg);
+        playerPokemon.takeDamage(dmg);
+    }
 
     private void choosePokemon() {
         Integer opt;
@@ -87,6 +132,7 @@ public class GameController {
             try {
                 opt = getOption();
                 this.playerPokemon = pokemonSelector(opt);
+                this.playerPokemon.resetHP();
                 break;
             } catch (IllegalArgumentException e) {
                 System.err.printf("ERROR: %s\n", e.getMessage());
@@ -114,6 +160,7 @@ public class GameController {
     private void spawnWildPokemon() {
         int num = (int)(Math.random() * 3) + 1;
         this.enemyPokemon = pokemonSelector(num);
+        this.enemyPokemon.resetHP();
         System.out.println("You venture into the tall grass.");
         System.out.printf("A wild %s has appeared!\n", this.enemyPokemon.getName());
     }
