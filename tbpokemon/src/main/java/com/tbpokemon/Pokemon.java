@@ -117,6 +117,10 @@ public class Pokemon {
 
     public int useMove(Move move, Pokemon target) {
         System.out.printf("%s used %s\n", name, move.getName());
+        if (hasMissed(move)) {
+            System.out.println("But it missed!");
+            return 0;
+        }
         float damage = ((2 * level * getCrit())/5f) + 2;
         damage *= move.getPower();
         if (move.getCategory() == Category.PHYSICAL) {
@@ -166,5 +170,11 @@ public class Pokemon {
 
     public void resetHP() {
         curHealth = this.getHP();
+    }
+
+    private boolean hasMissed(Move move) {
+        int hitRate = move.getAccuracy();
+        int roll = (int)(Math.random() * (100 + 1));
+        return roll > hitRate;
     }
 }
