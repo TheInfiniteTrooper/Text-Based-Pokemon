@@ -244,6 +244,55 @@
                     "PP": 15
                 }
             }
+        },
+        "weavile": {
+            "name": "Weavile",
+            "type": "DARK",
+            "subtype": "ICE",
+            "level": 20,
+            "curHealth": 70,
+            "stats": {
+                "HP": 70,
+                "ATK": 78,
+                "DEF": 37,
+                "SPATK": 26,
+                "SPDEF": 45,
+                "SPD": 69
+            },
+            "moves": {
+                "1" : {
+                    "name": "Night Slash",
+                    "type": "DARK",
+                    "category": "PHYSICAL",
+                    "power": 70,
+                    "accuracy": 100,
+                    "PP": 10
+                },
+                "2" : {
+                    "name": "Ice Punch",
+                    "type": "ICE",
+                    "category": "PHYSICAL",
+                    "power": 75,
+                    "accuracy": 100,
+                    "PP": 15 
+                },
+                "3" : {
+                    "name": "Brick Break",
+                    "type": "FIGHTING",
+                    "category": "PHYSICAL",
+                    "power": 75,
+                    "accuracy": 100,
+                    "PP": 15
+                },
+                "4" : {
+                    "name": "Shadow Claw",
+                    "type": "GHOST",
+                    "category": "PHYSICAL",
+                    "power": 70,
+                    "accuracy": 100,
+                    "PP": 15
+                }
+            }
         }
     }
 }
