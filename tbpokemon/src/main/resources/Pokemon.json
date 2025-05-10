@@ -152,7 +152,7 @@
             "type": "GHOST",
             "subtype": "POISON",
             "level": 20,
-            "curHealth": 64,
+            "curHealth": 62,
             "stats": {
                 "HP": 62,
                 "ATK": 37,
@@ -192,6 +192,55 @@
                     "category": "SPECIAL",
                     "power": 80,
                     "accuracy": 100,
+                    "PP": 15
+                }
+            }
+        },
+        "pikachu": {
+            "name": "Pikachu",
+            "type": "ELECTRIC",
+            "subtype": "NONE",
+            "level": 20,
+            "curHealth": 52,
+            "stats": {
+                "HP": 52,
+                "ATK": 49,
+                "DEF": 27,
+                "SPATK": 43,
+                "SPDEF": 27,
+                "SPD": 47
+            },
+            "moves": {
+                "1" : {
+                    "name": "Slam",
+                    "type": "NORMAL",
+                    "category": "PHYSICAL",
+                    "power": 80,
+                    "accuracy": 75,
+                    "PP": 20
+                },
+                "2" : {
+                    "name": "Thunderbolt",
+                    "type": "ELECTRIC",
+                    "category": "SPECIAL",
+                    "power": 95,
+                    "accuracy": 100,
+                    "PP": 15
+                },
+                "3" : {
+                    "name": "Volt Tackle",
+                    "type": "ELECTRIC",
+                    "category": "PHYSICAL",
+                    "power": 120,
+                    "accuracy": 100,
+                    "PP": 15
+                },
+                "4" : {
+                    "name": "Iron Tail",
+                    "type": "STEEL",
+                    "category": "PHYSICAL",
+                    "power": 100,
+                    "accuracy": 75,
                     "PP": 15
                 }
             }

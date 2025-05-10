@@ -127,6 +127,38 @@
             "power": 80,
             "accuracy": 100,
             "PP": 15
+        },
+        "slam" : {
+            "name": "Slam",
+            "type": "NORMAL",
+            "category": "PHYSICAL",
+            "power": 80,
+            "accuracy": 75,
+            "PP": 20
+        },
+        "thunderbolt" : {
+            "name": "Thunderbolt",
+            "type": "ELECTRIC",
+            "category": "SPECIAL",
+            "power": 95,
+            "accuracy": 100,
+            "PP": 15
+        },
+        "volttackle" : {
+            "name": "Volt Tackle",
+            "type": "ELECTRIC",
+            "category": "PHYSICAL",
+            "power": 120,
+            "accuracy": 100,
+            "PP": 15
+        },
+        "irontail" : {
+            "name": "Iron Tail",
+            "type": "STEEL",
+            "category": "PHYSICAL",
+            "power": 100,
+            "accuracy": 75,
+            "PP": 15
         }
     }
 }
