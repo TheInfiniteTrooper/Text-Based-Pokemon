@@ -146,6 +146,55 @@
                     "PP": 15
                 }
             }
+        },
+        "gengar": {
+            "name": "Gengar",
+            "type": "GHOST",
+            "subtype": "POISON",
+            "level": 20,
+            "curHealth": 64,
+            "stats": {
+                "HP": 62,
+                "ATK": 37,
+                "DEF": 31,
+                "SPATK": 82,
+                "SPDEF": 53,
+                "SPD": 55
+            },
+            "moves": {
+                "1" : {
+                    "name": "Lick",
+                    "type": "GHOST",
+                    "category": "PHYSICAL",
+                    "power": 20,
+                    "accuracy": 100,
+                    "PP": 30
+                },
+                "2" : {
+                    "name": "Shadow Punch",
+                    "type": "GHOST",
+                    "category": "PHYSICAL",
+                    "power": 60,
+                    "accuracy": 100,
+                    "PP": 20
+                },
+                "3" : {
+                    "name": "Shadow Ball",
+                    "type": "GHOST",
+                    "category": "SPECIAL",
+                    "power": 80,
+                    "accuracy": 100,
+                    "PP": 15
+                },
+                "4" : {
+                    "name": "Dark Pulse",
+                    "type": "DARK",
+                    "category": "SPECIAL",
+                    "power": 80,
+                    "accuracy": 100,
+                    "PP": 15
+                }
+            }
         }
     }
 }

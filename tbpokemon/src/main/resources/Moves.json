@@ -95,6 +95,38 @@
             "power": 95,
             "accuracy": 100,
             "PP": 15
+        },
+        "lick" : {
+            "name": "Lick",
+            "type": "GHOST",
+            "category": "PHYSICAL",
+            "power": 20,
+            "accuracy": 100,
+            "PP": 30
+        },
+        "shadowpunch" : {
+            "name": "Shadow Punch",
+            "type": "GHOST",
+            "category": "PHYSICAL",
+            "power": 60,
+            "accuracy": 100,
+            "PP": 20
+        },
+        "shadowball" : {
+            "name": "Shadow Ball",
+            "type": "GHOST",
+            "category": "SPECIAL",
+            "power": 80,
+            "accuracy": 100,
+            "PP": 15
+        },
+        "darkpulse" : {
+            "name": "Dark Pulse",
+            "type": "DARK",
+            "category": "SPECIAL",
+            "power": 80,
+            "accuracy": 100,
+            "PP": 15
         }
     }
 }
