@@ -58,15 +58,18 @@ public class MoveEffectiveness {
         for(Effective effect : Arrays.asList(typeEffect, subtypeEffect)) {
             switch (effect) {
                 case NO_EFFECT:
+                    System.out.println("It had no effect!");
                     return 0f;
                 case NOT_EFFECTIVE:
                     damageMulti *= 0.5f;
+                    System.out.println("It's not very effective...");
                     break;
                 case EFFECTIVE:
                     damageMulti *= 1f;
                     break;
                 case SUPER_EFFECTIVE:
                     damageMulti *= 2f;
+                    System.out.println("It's Super Effective!");
                     break;
                 default:
                     damageMulti *= 1f;

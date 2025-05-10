@@ -95,6 +95,102 @@
             "power": 95,
             "accuracy": 100,
             "PP": 15
+        },
+        "lick" : {
+            "name": "Lick",
+            "type": "GHOST",
+            "category": "PHYSICAL",
+            "power": 20,
+            "accuracy": 100,
+            "PP": 30
+        },
+        "shadowpunch" : {
+            "name": "Shadow Punch",
+            "type": "GHOST",
+            "category": "PHYSICAL",
+            "power": 60,
+            "accuracy": 100,
+            "PP": 20
+        },
+        "shadowball" : {
+            "name": "Shadow Ball",
+            "type": "GHOST",
+            "category": "SPECIAL",
+            "power": 80,
+            "accuracy": 100,
+            "PP": 15
+        },
+        "darkpulse" : {
+            "name": "Dark Pulse",
+            "type": "DARK",
+            "category": "SPECIAL",
+            "power": 80,
+            "accuracy": 100,
+            "PP": 15
+        },
+        "slam" : {
+            "name": "Slam",
+            "type": "NORMAL",
+            "category": "PHYSICAL",
+            "power": 80,
+            "accuracy": 75,
+            "PP": 20
+        },
+        "thunderbolt" : {
+            "name": "Thunderbolt",
+            "type": "ELECTRIC",
+            "category": "SPECIAL",
+            "power": 95,
+            "accuracy": 100,
+            "PP": 15
+        },
+        "volttackle" : {
+            "name": "Volt Tackle",
+            "type": "ELECTRIC",
+            "category": "PHYSICAL",
+            "power": 120,
+            "accuracy": 100,
+            "PP": 15
+        },
+        "irontail" : {
+            "name": "Iron Tail",
+            "type": "STEEL",
+            "category": "PHYSICAL",
+            "power": 100,
+            "accuracy": 75,
+            "PP": 15
+        },
+        "nightslash" : {
+            "name": "Night Slash",
+            "type": "DARK",
+            "category": "PHYSICAL",
+            "power": 70,
+            "accuracy": 100,
+            "PP": 10
+        },
+        "icepunch" : {
+            "name": "Ice Punch",
+            "type": "ICE",
+            "category": "PHYSICAL",
+            "power": 75,
+            "accuracy": 100,
+            "PP": 15 
+        },
+        "brickbreak" : {
+            "name": "Brick Break",
+            "type": "FIGHTING",
+            "category": "PHYSICAL",
+            "power": 75,
+            "accuracy": 100,
+            "PP": 15
+        },
+        "shadowclaw" : {
+            "name": "Shadow Claw",
+            "type": "GHOST",
+            "category": "PHYSICAL",
+            "power": 70,
+            "accuracy": 100,
+            "PP": 15
         }
     }
 }

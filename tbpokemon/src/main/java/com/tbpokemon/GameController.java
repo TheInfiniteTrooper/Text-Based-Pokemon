@@ -136,7 +136,7 @@ public class GameController {
     private void choosePokemon() {
         Integer opt;
         while (true) {
-            System.out.println("Choose your Pokemon:\n1) Squirtle 2) Bulbasaur 3) Charmander");
+            System.out.println("Choose your Pokemon:\n1) Squirtle 2) Bulbasaur 3) Charmander 4) Gengar 5) Pikachu 6) Weavile");
             try {
                 opt = getOption();
                 this.playerPokemon = pokemonSelector(opt);
@@ -151,7 +151,7 @@ public class GameController {
     
     private Pokemon pokemonSelector(Integer opt) {
         if (opt == null) {
-            throw new IllegalArgumentException("Option should be 1, 2, or 3!");
+            throw new IllegalArgumentException("Option should be 1, 2, 3, 4, 5 or 6!");
         }
         switch (opt) {
             case 1:
@@ -160,13 +160,19 @@ public class GameController {
                 return pokedex.getPokemon("bulbasaur").clone();
             case 3:
                 return pokedex.getPokemon("charmander").clone();
+            case 4:
+                return pokedex.getPokemon("gengar").clone();
+            case 5:
+                return pokedex.getPokemon("pikachu").clone();
+            case 6:
+                return pokedex.getPokemon("weavile").clone();
             default:
-                throw new IllegalArgumentException("Option should be 1, 2, or 3!");
+                throw new IllegalArgumentException("Option should be 1, 2, 3, 4, 5 or 6!");
         }
     }
 
     private void spawnWildPokemon() {
-        int num = (int)(Math.random() * 3) + 1;
+        int num = (int)(Math.random() * 6) + 1;
         this.enemyPokemon = pokemonSelector(num);
         this.enemyPokemon.resetHP();
         System.out.println("You venture into the tall grass.");
